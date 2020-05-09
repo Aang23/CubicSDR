@@ -176,6 +176,10 @@ find_package(wxWidgets COMPONENTS gl core propgrid adv base REQUIRED)
 set(wxWidgets_CONFIGURATION mswu)
 include(${wxWidgets_USE_FILE})
 
+find_package(Volk REQUIRED)
+include_directories(${VOLK_INCLUDE_DIR})
+SET(OTHER_LIBRARIES ${VOLK_LIBRARIES} ${OTHER_LIBRARIES})
+
 find_package(SoapySDR "0.4.0" NO_MODULE REQUIRED)
 include_directories(${SOAPY_SDR_INCLUDE_DIR})
 SET(OTHER_LIBRARIES ${SOAPY_SDR_LIBRARY} ${OTHER_LIBRARIES})
@@ -345,6 +349,7 @@ SET (cubicsdr_sources
     src/modules/modem/analog/ModemNBFM.cpp
     src/modules/modem/analog/ModemFMStereo.cpp
     src/modules/modem/analog/ModemIQ.cpp
+    src/modules/modem/analog/ModemBB.cpp
     src/modules/modem/analog/ModemLSB.cpp
     src/modules/modem/analog/ModemUSB.cpp
     src/audio/AudioThread.cpp

@@ -129,6 +129,7 @@ void DemodulatorThread::run() {
         
         ModemAnalog *modemAnalog = (cModem->getType() == "analog")?((ModemAnalog *)cModem):nullptr;
         ModemDigital *modemDigital = (cModem->getType() == "digital")?((ModemDigital *)cModem):nullptr;
+        Modem *modemBaseband = (cModem->getType() == "baseband")?((Modem *)cModem):nullptr;
         
         if (modemAnalog != nullptr) {
             ati = outputBuffers.getBuffer();
@@ -136,6 +137,12 @@ void DemodulatorThread::run() {
             ati->sampleRate = cModemKit->audioSampleRate;
             ati->inputRate = inp->sampleRate;
         } else if (modemDigital != nullptr) {
+            ati = outputBuffers.getBuffer();
+            
+            ati->sampleRate = cModemKit->sampleRate;
+            ati->inputRate = inp->sampleRate;
+            ati->data.resize(0);
+        } else if (modemBaseband != nullptr) {
             ati = outputBuffers.getBuffer();
             
             ati->sampleRate = cModemKit->sampleRate;

@@ -60,7 +60,7 @@ const char filePathSeparator =
 //seconds.
 #define DEMOD_WATERFALL_DURATION_IN_SECONDS 4.0
 
-#define CHANNELIZER_RATE_MAX 500000
+#define CHANNELIZER_RATE_MAX 9000000
 
 #define MANUAL_SAMPLE_RATE_MIN 2000000 // 2MHz
 #define MANUAL_SAMPLE_RATE_MAX 200000000 // 200MHz (We are 2017+ after all)

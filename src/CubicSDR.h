@@ -39,6 +39,7 @@
 #include "ModemLSB.h"
 #include "ModemDSB.h"
 #include "ModemIQ.h"
+#include "ModemBB.h"
 
 #ifdef ENABLE_DIGITAL_LAB
 #include "ModemAPSK.h"

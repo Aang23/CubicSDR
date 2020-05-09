@@ -298,6 +298,7 @@ bool CubicSDR::OnInit() {
     Modem::addModemFactory(ModemUSB::factory, "USB", 5400);
     Modem::addModemFactory(ModemDSB::factory, "DSB", 5400);
     Modem::addModemFactory(ModemIQ::factory, "I/Q", 48000);
+    Modem::addModemFactory(ModemBB::factory, "BB", 48000);
 
 #ifdef ENABLE_DIGITAL_LAB
     Modem::addModemFactory(ModemAPSK::factory, "APSK", 200000);
