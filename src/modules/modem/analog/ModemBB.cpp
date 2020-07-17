@@ -81,8 +81,7 @@ void ModemBB::demodulate(ModemKit * /* kit */, ModemIQData *input, AudioThreadIn
 
         for (size_t i = 0; i < bufSize; i++)
         {
-            outputFile.write((char *)&input->data[i].imag, 4);
-            outputFile.write((char *)&input->data[i].real, 4);
+            outputFile.write((char *)&input->data[i], sizeof(liquid_float_complex));
         }
     }
 }
